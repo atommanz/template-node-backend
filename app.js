@@ -2,7 +2,6 @@ import createError from 'http-errors'
 import config from 'config'
 import express from 'express'
 import path from 'path'
-import fileUpload from 'express-fileupload'
 import cookieParser from 'cookie-parser'
 import logger from 'morgan'
 import cors from 'cors'
@@ -15,10 +14,6 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
 app.use(cors())
-app.use(fileUpload({
-  // useTempFiles: true,
-  // tempFileDir: '/tmp/',
-}))
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
